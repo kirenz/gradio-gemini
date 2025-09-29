@@ -40,13 +40,6 @@ Following the steps below will get you ready to run the examples and experiment 
   uv run python chatbot_random.py
   ```
 
-## chatbot_history.py — Add Simple Memory
-- Extends the chatbot pattern by echoing all previous user inputs.
-- Demonstrates how to iterate over the `history` list that Gradio maintains for you.
-- Launch it with:
-  ```bash
-  uv run python chatbot_history.py
-  ```
 
 ## chatbot_simple.py — Connect Gradio to Gemini
 - Calls Gemini for every user message while presenting a full chat UI.
@@ -56,7 +49,11 @@ Following the steps below will get you ready to run the examples and experiment 
   uv run python chatbot_simple.py
   ```
 
-## Next Steps
-- Explore the [`pyproject.toml`](pyproject.toml) to see how dependencies are managed.
-- Modify the prompt logic or add state to customize the chatbot experience.
-- Replace the random responder with your own rule-based or retrieval-augmented logic before sending messages to Gemini.
+
+## chatbot_history.py — Add Simple Memory
+- Switches `gr.ChatInterface` to `type="messages"` so Gradio supplies the entire chat transcript.
+- Concatenates the roles and text from each turn before sending the prompt to Gemini, giving it conversation memory.
+- Launch it with:
+  ```bash
+  uv run python chatbot_history.py
+  ```
