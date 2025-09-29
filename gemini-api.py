@@ -13,6 +13,6 @@ response_1 = client.models.generate_content(
     contents='Hello, how are you',
 )
 
-print(response_1)
+#print(response_1)
 
-
+print(response_1.text)
