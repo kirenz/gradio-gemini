@@ -15,4 +15,4 @@ response_1 = client.models.generate_content(
 
 print(response_1)
 
-response_1.
+
